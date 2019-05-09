@@ -10,6 +10,38 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Add View Controller-->
+        <scene sceneID="Qfo-R0-u8o">
+            <objects>
+                <viewController id="7jz-XI-Bqt" customClass="AddViewController" customModule="TableView03" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t9w-E1-CdN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8fb-nY-LO2">
+                                <rect key="frame" x="16" y="110" width="343" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePJ-nP-6X8">
+                                <rect key="frame" x="87" y="499" width="201" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="haK-uN-7gG"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailData" destination="ePJ-nP-6X8" id="H3U-eD-vsf"/>
+                        <outlet property="imageData" destination="8fb-nY-LO2" id="v0f-d6-jLW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ax6-5S-53g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1928.8" y="-278.41079460269867"/>
+        </scene>
         <!--동물농장-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -46,7 +78,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="uwz-Qx-SR5" kind="push" identifier="gotoDetail" id="hcc-AE-wdW"/>
+                                            <segue destination="uwz-Qx-SR5" kind="show" identifier="goDetail" id="hcc-AE-wdW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -61,7 +93,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="동물농장" id="OfF-OS-mUZ"/>
+                    <navigationItem key="navigationItem" title="동물농장" id="OfF-OS-mUZ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Mql-GN-zso">
+                            <connections>
+                                <segue destination="7jz-XI-Bqt" kind="show" identifier="goAdd" id="WPS-PW-fUS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="myTableView" destination="u72-09-IQC" id="51L-Nf-suq"/>
                     </connections>
@@ -77,14 +115,14 @@
                     <view key="view" contentMode="scaleToFill" id="hhp-mP-Aiw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.99991799770000001" blue="0.00014873206" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="vWD-Bf-Inx"/>
                     </view>
                     <navigationItem key="navigationItem" id="1Ky-9L-UZo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bk7-lU-vQ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1870" y="-564"/>
+            <point key="canvasLocation" x="1929" y="-932"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FkV-T9-3Pi">
